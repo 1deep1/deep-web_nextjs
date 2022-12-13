@@ -1,26 +1,36 @@
 import React from 'react';
 import { APP_ROUTES } from '../lib/constants';
 import Link from 'next/link';
-export default function Layout({ children }) {
+import Head from 'next/head';
+import { Rubik } from '@next/font/google';
+
+const rubik = Rubik({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['400', '500', '700'],
+  subsets: ['cyrillic', 'latin'],
+  variable: '--font-rubik'
+})
+
+export default function Layout({ Component, pageProps, children }) {
+  
   return (
-    <div className='flex flex-col h-screen'>
-      <header className="flex shadow-lg p-4 bg-gray-900 text-white">
-        <Link href={APP_ROUTES.AXIOS}>
-          <a className="mr-5" > Axios </a>
-        </Link>
-        <Link href={APP_ROUTES.FETCH}>
-          <a className="mr-5"> Fetch </a>
-        </Link>
-        <Link href={APP_ROUTES.GRAPHQL_REQUEST}>
-          <a className="mr-5"> GraphQL Request </a>
-        </Link>
-        <Link href={APP_ROUTES.APOLLO_CLIENT}>
-          <a className="mr-5"> Apollo Client </a>
-        </Link>
-      </header>
-      <div className='flex-1 p-16 flex justify-center items-center'> 
-        {children}
-      </div>
-    </div>
+    <main className={rubik.variable}>
+      <Head>
+        {Component.title
+          ? <title>{Component.title + ' | deep'}</title>
+          : <title>deep IT, Design and beyond</title>
+        }
+        {Component.description
+          ? <meta name="description" content={Component.description + " | deep IT, Design and beypnd"} />
+          : <meta name="description" content="deep IT, Design and beypnd" />
+        }
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <meta charSet='utf-8' />
+        <meta name="keywords" content="deep, it, web, react, developer" />
+        <meta name="robots" content="all" />
+      </Head>
+      {children}
+    </main>
   );
 }

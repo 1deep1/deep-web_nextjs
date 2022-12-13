@@ -6,7 +6,8 @@
   },
   "extends": [
       "eslint:recommended",
-      "plugin:react/recommended"
+      "plugin:react/recommended",
+      "next/core-web-vitals"
   ],
   "parserOptions": {
       "ecmaFeatures": {
@@ -16,7 +17,8 @@
       "sourceType": "module"
   },
   "plugins": [
-      "react"
+      "react",
+      "next"
   ],
   "rules": {
       "indent": [
