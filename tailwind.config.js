@@ -9,8 +9,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        deep_gray: '#181818',
+        deep_light: '#83888E',
+        deep_main: '#472183'
+      },
       fontFamily: {
-        rubik: ['var(--font-rubik)', ...fontFamily.sans]
+        lora: ['var(--font-lora)', ...fontFamily.sans]
       },
     },
   },

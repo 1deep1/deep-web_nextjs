@@ -1,0 +1,79 @@
+/* Index styles */
+
+.deep_grid {
+    display: grid;
+    flex: 0 0 auto;
+    gap: 20px;
+    grid-auto-rows: min-content;
+    grid-template-columns: repeat(4, minmax(50px, 1fr));
+    grid-template-rows: repeat(3, min-content);
+    height: min-content;
+    justify-content: center;
+    overflow: visible;
+    padding: 0px;
+    position: relative;
+    width: 100%;
+}
+
+
+.deep_grid__chart {
+
+}
+
+.deep_grid__textMain {
+    transition: ease-in-out 0.4s;
+}
+
+.deep_grid__textSecond {
+    transition: ease-in-out 0.4s;
+}
+.deep_grid__ico {
+    transition: ease-in-out 0.4s;
+}
+.deep_grid__textHide {
+    transition: ease-in-out 0.4s;
+}
+.deep_grid__page {
+    transition: ease-out 0.2s;
+}
+.deep_grid__logo {
+    transition: ease-out 0.2s;
+}
+
+.deep_grid__chart:hover .deep_grid__textMain {
+    transition: ease-in-out 0.4s;
+    transform: translate(0px, -20px);
+    opacity: 0;
+}
+.deep_grid__chart:hover .deep_grid__textSecond {
+    transition: ease-in-out 0.4s;
+    transform: translate(0px, 35px);
+    opacity: 0;
+}
+.deep_grid__chart:hover .deep_grid__ico {
+    transition: ease-in-out 0.4s;
+    transform: translate(0px, 35px);
+}
+.deep_grid__chart:hover .deep_grid__textHide {
+    transition: ease-in-out 0.4s;
+    transform: translate(0px, -20px);
+    opacity: 100;
+}
+
+.deep_grid__chart:hover .deep_grid__page {
+    transition: ease-in 0.2s;
+    transform: scale(1.2);
+    transform-origin: bottom left;
+}
+.deep_grid__chart:hover .deep_grid__logo {
+    transition: ease-in 0.2s;
+    transform: scale(1.2);
+    transform-origin: bottom left;
+}
+
+
+@media only screen and (max-width: 968px) {
+    .deep_grid {
+        grid-template-columns: repeat(1, minmax(50px, 1fr));
+    }
+}

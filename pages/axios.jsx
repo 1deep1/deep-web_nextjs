@@ -3,7 +3,7 @@ import { GRAPHCMS_URL, GRAPHCMS_PERMANENTAUTH_TOKEN } from '../lib/constants';
 import { UserDetail } from '../components/UserDetail';
 import axios from 'axios';
 
-export default function Fetch() {
+export default function Fetch(props) {
   const [email, setEmail] = useState('');
   const [userDetails, setUserDetails] = useState({});
   const [isLoading, setIsLoading] = useState(false);
@@ -81,4 +81,12 @@ export default function Fetch() {
       <UserDetail user={userDetails} />
     </div>
   );
+}
+
+export const getServerSideProps = async({ resolvedUrl }) => {
+  return {
+    props: {
+      resolvedUrl
+    }
+  }
 }

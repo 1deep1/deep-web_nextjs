@@ -1,4 +1,7 @@
-/* Global style */
+/* Global styles */
+
+/* Imports */
+@import url('../styles/index.css');
 
 /* TailwindCSS */
 @tailwind base;
